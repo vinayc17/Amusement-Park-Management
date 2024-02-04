@@ -1,0 +1,21 @@
+<app-nav [customer]="true"></app-nav>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-6" *ngFor="let i of tickets">
+            <div class="card border-dark">
+                <div class="card-body text-center">
+                    <p class="card-text text-muted">Booked On : <span class="text-dark">{{i.dateTime}}</span></p>
+                    <p class="card-text text-muted">Activity Name : <span class="text-dark">{{i.activity.name}}</span>
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <div [ngSwitch]="i.status">
+                        <button class="btn btn-info disbled w-100" *ngSwitchCase="'Pending'">{{i.status}}</button>
+                        <button class="btn btn-danger disbled w-100" *ngSwitchCase="'Rejected'">{{i.status}}</button>
+                        <button class="btn btn-success disbled w-100" *ngSwitchCase="'Approved'">{{i.status}}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

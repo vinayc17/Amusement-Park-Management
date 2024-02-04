@@ -1,0 +1,32 @@
+<app-nav [admin]="true"></app-nav>
+<div class="container-fluid mt-5">
+    <div class="row">
+        <div class="display-3 text-center" *ngIf="tickets.length === 0">There are no bookings, please wait</div>
+        <div class="col-lg-3" *ngFor="let i of tickets">
+            <div class="card border-dark">
+                <div class="card-body text-center">
+                    <p class="card-text text-muted">Booked by : <span class="text-dark">{{i.customer.name}}</span></p>
+                    <p class="card-text text-muted">Booked On : <span class="text-dark">{{i.dateTime | date}}</span></p>
+                    <p class="card-text text-muted">Activity Name : <span class="text-dark">{{i.activity.name}}</span>
+                    </p>
+                </div>
+                <div class="card-footer" *ngIf="i.status === 'Pending'">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <button class="btn btn-success w-100" (click)="handleTicket(i,'Approved')">Approve</button>
+                        </div>
+                        <div class="col-lg-6">
+                            <button class="btn btn-danger w-100" (click)="handleTicket(i,'Rejected')">Reject</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer" *ngIf="i.status !== 'Pending'">
+                    <div [ngSwitch]="i.status">
+                        <button class="btn btn-danger disabled w-100" *ngSwitchCase="'Rejected'">{{i.status}}</button>
+                        <button class="btn btn-success disabled w-100" *ngSwitchCase="'Approved'">{{i.status}}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

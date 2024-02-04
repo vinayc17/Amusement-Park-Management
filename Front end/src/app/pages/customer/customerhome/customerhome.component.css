@@ -1,0 +1,68 @@
+
+span{
+    color:blue;
+    font-weight: bold;
+}
+
+h1{
+    margin-top: 0%;
+}
+h2{
+    font-size: 25px;
+}
+
+.btn{
+    align-content: center;
+}
+
+ /* Food Services */
+ section{
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+ }
+
+ .slider{
+    height: 250px;
+    margin: auto;
+    position: relative;
+    width: 90%;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+ }
+
+ .slide-track{
+    display: flex;
+    width: calc(400px * 6);
+ }
+
+ .slide{
+    height: 200px;
+    width:250px;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    perspective: 100px;
+ }
+
+ img{
+    width: 100%;
+ }
+
+img:hover{
+    transform: translateZ(20px);
+}
+
+/* Offer  */
+#offer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.column{
+    flex: 33.33%;
+    padding: 50px;
+    width: 100%;
+}

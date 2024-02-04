@@ -1,0 +1,98 @@
+<div class="alert alert-success mt-2" *ngIf="success">
+  Registered Successfully
+</div>
+<div class="alert alert-danger mt-2" *ngIf="error">{{ msg }}</div>
+<div class="card border-success">
+  <div class="card-body">
+    <div class="card-title display-5" *ngIf="!isRegister">Login</div>
+    <div class="card-title display-5" *ngIf="isRegister">Register</div>
+
+    <hr />
+
+    <div class="form-floating" *ngIf="isRegister">
+      <input
+        class="form-control"
+        type="text"
+        [(ngModel)]="name"
+        id="name"
+        placeholder="Name"
+      />
+      <label for="name">Name</label>
+    </div>
+
+    <div class="form-floating mt-3" *ngIf="isRegister">
+      <input
+        class="form-control"
+        type="number"
+        id="phone"
+        [(ngModel)]="phone"
+        placeholder="Contact Number"
+      />
+      <label for="phone">Contact Number</label>
+    </div>
+
+    <div class="form-floating mt-3">
+      <input
+        class="form-control"
+        type="email"
+        id="email"
+        [(ngModel)]="email"
+        placeholder="Email Address"
+      />
+      <label for="email">Email Address</label>
+    </div>
+
+    <div class="form-floating">
+      <input
+        class="form-control mt-3"
+        type="password"
+        [(ngModel)]="password"
+        id="password"
+        placeholder="Password"
+      />
+      <label for="password">Password</label>
+    </div>
+
+    <div class="form-check form-switch mt-2 fs-5" [hidden]="!isRegister">
+      <input
+        class="form-check-input"
+        type="checkbox"
+        role="switch"
+        id="flexSwitchCheckChecked"
+        [checked]="admin"
+        (change)="admin = !admin"
+      />
+      <label class="form-check-label" for="flexSwitchCheckChecked" *ngIf="admin"
+        >Admin</label
+      >
+      <label
+        class="form-check-label"
+        for="flexSwitchCheckChecked"
+        *ngIf="!admin"
+        >Customer</label
+      >
+    </div>
+  </div>
+  <div class="text-center">
+    <button class="btn btn-success" *ngIf="!isRegister" (click)="validate()">
+      Login</button
+    ><br />
+    <button
+      class="btn btn-outline mt-1 mb-2"
+      *ngIf="!isRegister"
+      (click)="isRegister = true"
+    >
+      No Account ? Register
+    </button>
+    <button class="btn btn-success" *ngIf="isRegister" (click)="validate()">
+      Register</button
+    ><br />
+    <button
+      class="btn btn-outline mt-1 mb-2"
+      *ngIf="isRegister"
+      (click)="isRegister = false"
+    >
+      Registered ? Login
+    </button>
+  </div>
+</div>

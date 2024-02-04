@@ -1,0 +1,10 @@
+<app-nav [admin]="true"></app-nav>
+
+<div class="container-fluid mt-5">
+    <div class="row">
+        <div class="col-lg-4 mt-4" *ngFor="let i of activities">
+            <app-singleactivity [activity]="i" [isEdit]="true" (getActvities)="getAllActivities()"></app-singleactivity>
+        </div>
+        <div class="display-3 text-center" *ngIf="activities.length === 0">There are no activities , add some</div>
+    </div>
+</div>

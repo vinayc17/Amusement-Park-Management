@@ -1,0 +1,63 @@
+<nav class="navbar navbar-expand-lg bg-success navbar-dark  static-top">
+  <div class="container-fluid">
+    <a class="navbar-brand fs-3 ms-3" href="#"><b>Capg Amusement Park</b></a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="d-flex">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <!-- Admin Navigation -->
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0" *ngIf="admin">
+          <li class="nav-item">
+            <a class="nav-link mx-3 text-dark fs-5" routerLink="/admin/home"><b>Home</b></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mx-3 text-dark fs-5" routerLink="/admin/addactivity"><b>AddActivity</b></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mx-3 text-dark fs-5" routerLink="/admin/manageactivities"
+              ><b>ManageActivities</b></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mx-3 text-dark fs-5" routerLink="/admin/managecustomers"
+              ><b>ManageCustomers</b></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mx-3 text-dark fs-5" routerLink="/admin/managebookings"
+              ><b>ManageBookings</b></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mx-3 text-dark fs-5" routerLink="/"><b>Logout</b></a>
+          </li>
+        </ul>
+        <!-- End of Admin Navigation -->
+
+        <!-- Customer Navigation -->
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0  static-top" *ngIf="customer" style="background-color: rgb(253, 154, 5)">
+          <li class="nav-item">
+            <a class="nav-link mx-3 text-dark fs-5" routerLink="/customer/home"><b>Home</b></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mx-3 text-dark fs-5" routerLink="about-us"><b>About us</b></a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link mx-3 text-dark fs-5" routerLink="/customer/mybookings"><b>MyBookings</b></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mx-3 text-dark fs-5" routerLink="/"><b>Logout</b></a>
+          </li>
+        </ul>
+        <!-- End of Customer Navigation -->
+      </div>
+    </div>
+  </div>
+</nav>

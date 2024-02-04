@@ -1,0 +1,44 @@
+<app-nav [admin]="true"></app-nav>
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-6">
+            <div class="alert alert-success" *ngIf="success">Successfully added Activity</div>
+            <div class="alert alert-danger" *ngIf="error">Something went wrong please try again</div>
+            <div class="card">
+                <div class="card-body">
+                    <div class="form-group">
+                        <div class="form-floating">
+                            <input type="text" name="name" id="name" class="form-control"
+                                placeholder="Enter Activity Name" [(ngModel)]="activity.name" required />
+                            <label for="name">Enter Activity Name</label>
+                        </div>
+
+                        <div class="mt-2">
+                            <textarea type="text" name="description" id="description" class="form-control" rows="3"
+                                placeholder="Enter Activity Description" [(ngModel)]="activity.description" required>
+                            </textarea>
+                        </div>
+
+                        <div class="input-group mt-2">
+                            <span class="input-group-text">₹</span>
+                            <input type="number" class="form-control" aria-label="Charges For Activity"
+                                [(ngModel)]="activity.charges" required>
+                            <span class="input-group-text">.00</span>
+                        </div>
+
+                        <div class="mt-2">
+                            <input type="file" name="file" id="file" class="form-control" (change)="setFile($event)"
+                                placeholder="Upload Activity Image" accept="image/*" required />
+                        </div>
+
+                        <div>
+                            <button class="btn btn-success w-100 mt-2" (click)="addActivity()">Add</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3"></div>
+    </div>
+</div>
